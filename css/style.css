@@ -2,81 +2,58 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #000000;
 }
 
-.yellow {
-  background-color: rgba(255, 255, 0, 0.7);
+* {
+  font-family: "Open Sans", sans-serif;
 }
 
-.orange {
-  background-color: rgba(255, 165, 0, 0.7);
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
 }
 
-.green {
-  background-color: rgba(0, 128, 0, 0.7);
+h2 {
+  text-align: center;
+  padding: 8px 0px;
 }
 
-.red {
-  background-color: rgba(255, 0, 0, 0.7);
+h3 {
+  text-align: center;
+  padding-bottom: 8px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  margin-bottom: 30px;
 }
 header div {
   display: flex;
-  gap: 30px;
+  gap: 8px;
 }
 
-button {
-  padding: 10px;
-  background-color: white;
-  border: none;
+.section__notes {
+  padding: 8px;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.section__notes > div {
+  padding: 8px;
+  border: 1px solid black;
   border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 500;
 }
-
-button.active {
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-}
-
-button.inactive {
-  background-color: #f1f1f1;
-  color: #333;
-  cursor: pointer;
-}
-
-button.copied {
-  outline: 2px solid #4caf50;
-  transition: outline 0.2s ease;
-}
-
-section {
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+.section__notes > div > div {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
 }
 @media (min-width: 769px) {
-  section {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-@media (min-width: 1041px) {
-  section {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-@media (min-width: 1281px) {
-  section {
-    grid-template-columns: repeat(12, 1fr);
+  .section__notes > div > div {
+    flex-direction: row;
   }
 }
 
@@ -84,12 +61,57 @@ section {
   background-color: rgba(128, 128, 128, 0.3);
 }
 
-#incident {
-  background-color: rgba(255, 0, 0, 0.5);
+#reminders {
+  background-color: rgba(255, 255, 0, 0.3);
 }
 
-#demande {
-  background-color: rgba(0, 0, 255, 0.5);
+#escalations {
+  background-color: rgba(255, 165, 0, 0.3);
+}
+
+#resolutions {
+  background-color: rgba(0, 128, 0, 0.3);
+}
+
+#closures {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#general-incidents {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#application-incidents {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+#request {
+  background-color: rgba(0, 0, 255, 0.3);
+}
+
+button {
+  padding: 8px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+button.active {
+  background-color: rgba(0, 0, 255, 0.7);
+  color: #ffffff;
+}
+
+button.inactive {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+button.copied {
+  outline: none;
+  box-shadow: 0 0 8px 8px #ffffff;
+  transition: box-shadow 0.2s ease;
 }
 
 /*# sourceMappingURL=style.css.map */

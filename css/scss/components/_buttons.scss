@@ -1,0 +1,28 @@
+@use '../abstracts/variables' as *;
+
+button {
+    padding: 8px;
+    background-color: $white;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+button.active {
+    background-color: $blue-middle;
+    color: $white;
+    // cursor: pointer;
+}
+
+button.inactive {
+    background-color: $grey-light;
+    // cursor: pointer;
+}
+
+button.copied {
+  outline: none; // on retire le contour net
+  box-shadow: 0 0 8px 8px $white;
+  transition: box-shadow 0.2s ease;
+}

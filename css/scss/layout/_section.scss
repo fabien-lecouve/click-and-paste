@@ -1,0 +1,68 @@
+@use '../abstracts/variables' as *;
+
+.section {
+
+    &__notes {
+        padding: 8px;
+        gap: 8px;
+        display: flex;
+
+        // @media (min-width: 769px) {
+            flex-wrap: wrap;
+        // }
+
+
+        >div {
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 8px;
+
+            >div {
+                gap: 8px;
+                display: flex;
+                flex-direction: column;
+
+                @media (min-width: 769px) {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+#general {
+    background-color: $grey-light;
+}
+
+#reminders {
+    background-color: $yellow-light;
+}
+
+#escalations {
+    background-color: $orange-light;
+}
+
+#resolutions {
+    background-color: $green-light;
+}
+
+#closures {
+    background-color: $red-light;
+}
+
+
+
+#general-incidents {
+    background-color: $red-light;
+}
+
+#application-incidents {
+    background-color: $red-middle;
+}
+
+
+
+#request {
+    background-color: $blue-light;
+}
+
