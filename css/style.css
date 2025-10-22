@@ -26,6 +26,10 @@ h3 {
   padding-bottom: 8px;
 }
 
+body {
+  background-color: #F2F2F2;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -36,25 +40,33 @@ header div {
   gap: 8px;
 }
 
-.section__notes {
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+main .section {
+  border-radius: 8px;
+}
+main .section__notes {
   padding: 8px;
   gap: 8px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.section__notes > div {
+main .section__notes > div {
   padding: 8px;
   border: 1px solid #4D4D4D;
   border-radius: 8px;
 }
-.section__notes > div > div {
+main .section__notes > div > div {
   gap: 8px;
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 769px) {
-  .section__notes > div > div {
+  main .section__notes > div > div {
     flex-direction: row;
   }
 }
@@ -71,16 +83,20 @@ header div {
   background-color: #F8B878;
 }
 
-#resolutions {
-  background-color: #7DDFA1;
-}
-
 #closures {
   background-color: #F28B82;
 }
 
+#actions {
+  background-color: #7DBEF0;
+}
+
+#resolutions {
+  background-color: #7DDFA1;
+}
+
 #general-incidents {
-  background-color: #F28B82;
+  background-color: #F8B6AE;
 }
 #general-incidents > div > div {
   background-color: #FDE9E8;
@@ -93,10 +109,17 @@ header div {
   background-color: #FDE9E8;
 }
 
-#access-request {
+#general-requests {
+  background-color: #B1D8F7;
+}
+#general-requests > div > div {
+  background-color: #E6F3FC;
+}
+
+#access-requests {
   background-color: #7DBEF0;
 }
-#access-request > div > div {
+#access-requests > div > div {
   background-color: #E6F3FC;
 }
 

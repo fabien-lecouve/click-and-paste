@@ -36,9 +36,6 @@
                 <div id="reminders">
                     <h3>relances</h3>
                     <div>
-                        <button type="button" value="call">appel</button>
-                        <button type="button" value="follow">suivi</button>
-                        <button type="button" value="modification">modification</button>
                         <button type="button" value="reminder_1">rl1</button>
                         <button type="button" value="reminder_2">rl2</button>
                         <button type="button" value="reminder_3">rl3</button>
@@ -54,14 +51,6 @@
                     </div>
                 </div>
 
-                <div id="resolutions">
-                    <h3>résolutions</h3>
-                    <div>
-                        <button type="button" value="resolution_inc">incident</button>
-                        <button type="button" value="resolution_ritm">demande</button>
-                    </div>
-                </div>
-
                 <div id="closures">
                     <h3>clôtures</h3>
                     <div>
@@ -71,6 +60,24 @@
                         <button type="button" value="closure_jira">jira confluence</button>
                     </div>
                 </div>
+
+                <div id="actions">
+                    <h3>actions</h3>
+                    <div>
+                        <button type="button" value="call">appel</button>
+                        <button type="button" value="follow">suivi</button>
+                        <button type="button" value="modification">modification</button>
+                    </div>
+                </div>
+
+                <div id="resolutions">
+                    <h3>résolutions</h3>
+                    <div>
+                        <button type="button" value="resolution_inc">incident</button>
+                        <button type="button" value="resolution_ritm">demande</button>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -80,8 +87,8 @@
                 <div>
                     <h3>Procédures générales</h3>
                     <div>
-                        <button type="button" value="private_browsing_chrome" >Navigation privée</button>
-                        <button type="button" value="clear_cache_chrome" >Vidage cache</button>
+                        <button type="button" value="private_browsing_chrome">Navigation privée Chrome</button>
+                        <button type="button" value="clear_cache_chrome">Vidage cache Chrome</button>
                         <!-- <button type="button" value="page_inaccessible" >Page inaccessible</button> -->
                     </div>
                 </div>
@@ -95,15 +102,27 @@
                 <div>
                     <h3>Access Orli erreur system.mdw</h3>
                     <div>
-                        <button type="button" value="incident_ao_system_mdw_requirements" >prérequis</button>
+                        <button type="button" value="incident_ao_system_mdw_requirements">prérequis</button>
                         <button type="button" value="incident_ao_system_mdw_wn" class="wn">work note</button>
-                        <button type="button" value="incident_ao_system_mdw_resolution" >résolution</button>
+                        <button type="button" value="incident_ao_system_mdw_resolution">résolution</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="access-request" class="section">
+        <section id="general-requests" class="section">
+            <h2>demandes générales</h2>
+            <div class="section__notes">
+                <div>
+                    <h3>utiles</h3>
+                    <div>
+                        <button type="button" value="validation_manager">Validation Manager</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access-requests" class="section">
             <h2>demandes d'accès</h2>
             <div class="section__notes">
                 <div>
@@ -149,12 +168,6 @@
                     <h3>Rosario</h3>
                     <button type="button" value="access_rosario_requirements">prérequis</button>
                 </div>
-
-                <div>
-                    <h3>Validation Manager</h3>
-                    <button type="button" value="validation_manager">Validation Manager</button>
-                </div>
-
             </div>
         </section>
     </main>
