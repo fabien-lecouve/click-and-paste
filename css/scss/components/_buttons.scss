@@ -3,15 +3,15 @@
 button {
     padding: 8px;
     background-color: $white;
-    border: 1px solid black;
+    border: 1px solid $black;
     border-radius: 8px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 500;
+    // font-weight: 500;
 }
 
 button.active {
-    background-color: $blue-middle;
+    background-color: $blue-dark;
     color: $white;
     // cursor: pointer;
 }

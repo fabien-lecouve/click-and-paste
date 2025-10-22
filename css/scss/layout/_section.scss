@@ -6,15 +6,16 @@
         padding: 8px;
         gap: 8px;
         display: flex;
+        justify-content: center;
 
         // @media (min-width: 769px) {
-            flex-wrap: wrap;
+        flex-wrap: wrap;
         // }
 
 
         >div {
             padding: 8px;
-            border: 1px solid black;
+            border: 1px solid $black;
             border-radius: 8px;
 
             >div {
@@ -35,34 +36,50 @@
 }
 
 #reminders {
-    background-color: $yellow-light;
+    background-color: $yellow;
 }
 
 #escalations {
-    background-color: $orange-light;
+    background-color: $orange;
 }
 
 #resolutions {
-    background-color: $green-light;
+    background-color: $green;
 }
 
 #closures {
-    background-color: $red-light;
+    background-color: $red;
 }
 
 
 
 #general-incidents {
-    background-color: $red-light;
+    background-color: $red;
+
+    &>div>div {
+        background-color: $red-light;
+    }
 }
 
 #application-incidents {
-    background-color: $red-middle;
+    // background-color: $red-dark;
+    background-color: $red;
+
+    &>div>div {
+        background-color: $red-light;
+    }
 }
 
 
 
-#request {
-    background-color: $blue-light;
+#access-request {
+    background-color: $blue;
+
+    &>div>div {
+        background-color: $blue-light;
+    }
 }
 
+.wn {
+    background-color: $orange;
+}

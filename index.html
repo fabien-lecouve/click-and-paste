@@ -24,8 +24,8 @@
         <h1>click & paste</h1>
 
         <div>
-            <button type="button" value="FR" id="FR">FR</button>
-            <button type="button" value="EN" id="EN">EN</button>
+            <button type="button" value="fr" id="fr">FR</button>
+            <button type="button" value="en" id="en">EN</button>
         </div>
     </header>
 
@@ -37,6 +37,8 @@
                     <h3>relances</h3>
                     <div>
                         <button type="button" value="call">appel</button>
+                        <button type="button" value="follow">suivi</button>
+                        <button type="button" value="modification">modification</button>
                         <button type="button" value="reminder_1">rl1</button>
                         <button type="button" value="reminder_2">rl2</button>
                         <button type="button" value="reminder_3">rl3</button>
@@ -55,7 +57,6 @@
                 <div id="resolutions">
                     <h3>résolutions</h3>
                     <div>
-                        <button type="button" value="modification">modification</button>
                         <button type="button" value="resolution_inc">incident</button>
                         <button type="button" value="resolution_ritm">demande</button>
                     </div>
@@ -79,8 +80,8 @@
                 <div>
                     <h3>Procédures générales</h3>
                     <div>
-                        <button type="button" value="navigation_privee" >Navigation privée</button>
-                        <button type="button" value="vidage_cache" >Vidage cache</button>
+                        <button type="button" value="private_browsing_chrome" >Navigation privée</button>
+                        <button type="button" value="clear_cache_chrome" >Vidage cache</button>
                         <!-- <button type="button" value="page_inaccessible" >Page inaccessible</button> -->
                     </div>
                 </div>
@@ -94,52 +95,64 @@
                 <div>
                     <h3>Access Orli erreur system.mdw</h3>
                     <div>
-                        <button type="button" value="numero_pc" >Numéro de PC</button>
-                        <button type="button" value="wn_access_system" class="wn">WN Access Orli System.mdw</button>
-                        <button type="button" value="reso_access_system" >Résolution Access Orli
-                            System.mdw</button>
+                        <button type="button" value="incident_ao_system_mdw_requirements" >prérequis</button>
+                        <button type="button" value="incident_ao_system_mdw_wn" class="wn">work note</button>
+                        <button type="button" value="incident_ao_system_mdw_resolution" >résolution</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="request" class="section">
-            <h2>demandes</h2>
+        <section id="access-request" class="section">
+            <h2>demandes d'accès</h2>
             <div class="section__notes">
                 <div>
                     <h3>Access Orli</h3>
-                    <button type="button" value="access_orli" >Access Orli</button>
+                    <button type="button" value="access_access_orli_wn" class="wn">work note</button>
+                    <button type="button" value="access_access_orli_resolution">résolution</button>
+                </div>
+
+                <div>
+                    <h3>Adobe</h3>
+                    <button type="button" value="access_adobe_requirements">prérequis</button>
+                    <button type="button" value="access_adobe_wn" class="wn">work note</button>
+                </div>
+
+                <div>
+                    <h3>Ariba</h3>
+                    <button type="button" value="access_ariba_requirements">prérequis</button>
+                    <button type="button" value="access_ariba_wn" class="wn">work note</button>
                 </div>
 
                 <div>
                     <h3>Brand Library</h3>
-                    <button type="button" value="brand_library" >Brand Library</button>
+                    <button type="button" value="access_brand_library_requirements">prérequis</button>
 
                 </div>
 
                 <div>
                     <h3>Miro</h3>
-                    <button type="button" value="miro" >Miro</button>
+                    <button type="button" value="access_miro_requirements">prérequis</button>
                 </div>
 
                 <div>
                     <h3>Orliweb</h3>
-                    <button type="button" value="orliweb" >Orliweb</button>
+                    <button type="button" value="access_orliweb_requirements">prérequis</button>
                 </div>
 
                 <div>
                     <h3>Qliksense</h3>
-                    <button type="button" value="qliksense" >Qliksense</button>
+                    <button type="button" value="access_qliksense_requirements">prérequis</button>
                 </div>
 
                 <div>
                     <h3>Rosario</h3>
-                    <button type="button" value="rosario" >Rosario</button>
+                    <button type="button" value="access_rosario_requirements">prérequis</button>
                 </div>
 
                 <div>
                     <h3>Validation Manager</h3>
-                    <button type="button" value="validation_manager" >Validation Manager</button>
+                    <button type="button" value="validation_manager">Validation Manager</button>
                 </div>
 
             </div>

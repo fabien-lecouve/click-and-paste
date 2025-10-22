@@ -1,18 +1,33 @@
 //// CONSTANTES POUR LES BOUTONS DU HEADER ////
 const lacoste = document.getElementById('lacoste');
 const urgo = document.getElementById('urgo');
-const fr = document.getElementById('FR');
-const en = document.getElementById('EN');
+const fr = document.getElementById('fr');
+const en = document.getElementById('en');
 
 const brandButtons = [lacoste, urgo];
 const langButtons = [fr, en];
 
 const notes = [
+    // GENERAL
     {
         slug: "call",
         translations: {
             FR: "Pourriez-vous nous rappeler au +33 1 44 58 12 99 afin que nous puissions traiter votre ticket ?",
             EN: "Could you please call us back at +33 1 44 58 12 99 so we can process your ticket ?"
+        }
+    },
+    {
+        slug: "follow",
+        translations: {
+            FR: "L'incident est-il toujours d'actualité ? Si tel est le cas, pouvez-vous nous recontacter par téléphone au +33 1 44 58 12 99 ?",
+            EN: "Is the incident still ongoing? If so, could you please contact us again by phone at +33 1 44 58 12 99 ?"
+        }
+    },
+    {
+        slug: "modification",
+        translations: {
+            FR: "Des modifications ont été apporté sur votre compte.\nPourriez-vous réessayer et nous faire un retour ?",
+            EN: "Changes have been made to your account.\nCould you try again and give us feedback ?"
         }
     },
     {
@@ -60,13 +75,6 @@ const notes = [
         type: "esc"
     },
     {
-        slug: "modification",
-        translations: {
-            FR: "Des modifications ont été apporté sur votre compte.\nPourriez-vous réessayer et nous faire un retour ?",
-            EN: "Changes have been made to your account.\nCould you try again and give us feedback ?"
-        }
-    },
-    {
         slug: "resolution_inc",
         translations: {
             FR: "Suite à l'intervention de nos services, votre incident est à présent résolu.\n\nNous procédons donc à la clôture de ce ticket.",
@@ -108,15 +116,38 @@ const notes = [
             EN: "Your request cannot be handled by our service.\n\nWe invite you to contact the Jira teams at jira_admin@lacoste.com please."
         }
     },
+    // INCIDENTS GENERAUX
     {
-        slug: "numero_pc",
+        slug: "private_browsing_chrome",
+        translations: {
+            FR: "Pourriez-vous essayer de vous y connecter en navigation privée ?\nCliquez sur les trois points verticaux en haut à droite de votre navigateur Chrome puis \"Nouvelle fenêtre de navigation privée\".\n\nCette action a-t-elle réglé votre incident ?",
+            EN: "Could you try logging in in private browsing?\nClick on the three vertical dots at the top right of your Chrome browser then \"New Private Browsing Window\".\n\nDid this action resolve your incident ?"
+        }
+    },
+    {
+        slug: "clear_cache_chrome",
+        translations: {
+            FR: "Pourriez-vous vider le cache de votre navigateur ?\n\nPour Google Chrome :\n- Cliquez sur les trois points verticaux en haut à droite.\n- Allez dans Historique (ou raccourci ctrl + H)  > Supprimer les données de navigation.\n- Cliquez sur \"Paramètres avancées\" et dans le sélecteur \"Période\" choisir \"Toutes les périodes\"\n- Cochez uniquement les 4 premières cases \"Historique de navigation\", \"Historique des téléchargements\", \"Cookies\", \"Images et fichiers en cache\"\n- Cliquez sur \"Supprimer les données\"\n- Fermez le navigateur (vérifier bien que toutes vos fenêtres sont fermées)\n- Rouvrez le navigateur et réessayez\n\nLes actions ont elles réglé votre incident ?",
+            EN: "Could you clear your browser cache ?\n\nFor Google Chrome:\n- Click on the three vertical dots at the top right.\n- Go to History (or shortcut ctrl + H) > Delete browsing data.\n- Click on \"Advanced settings\" and in the \"Period\" selector choose \"All periods\"\n- Check only the first 4 boxes \"Browsing history\", \"Download history\", \"Cookies\", \"Cached images and files\"\n- Click on \"Delete data\"\n- Close the browser (make sure all your windows are closed)\n- Reopen the browser and try again\n\nDid the actions resolve your incident ?"
+        }
+    },
+    // {
+    //     slug: "page_inaccessible",
+    //     translations: {
+    //         FR: "Avez-vous pu effectuer les tests de base suivants :\n- Tester en navigation privée. Si cela fonctionne, videz entièrement votre cache de navigateur.\n- Tester sur un autre navigateur.\n- Si vous avez des collègues en télétravail ont-ils également accès (via VPN) ?\n\nSi malgré tout cela le problème persiste, pourriez-vous refaire un test et nous fournir les informations suivantes :\n- Horodotage exact du test (date et heure).\n- Votre adresse IP lors du test.\n- Le lien exact auquel vous tenté d'accéder.\nEt nous confirmer que ce test est réalisé sous VPN.\n\nMerci d'avance pour votre retour.",
+    //         EN: ""
+    //     }
+    // },
+    // INCIDENTS APPLICATIFS
+    {
+        slug: "incident_ao_system_mdw_requirements",
         translations: {
             FR: "Pouvez vous nous transmettre votre numéro de PC commençant par FR ?\n\nVous pouvez le trouver soit sur votre bureau en haut à droite, soit en ouvrant les paramètres du poste et en allant dans \"Système\".",
             EN: "Can you please send us your PC number beginning with FR ?\n\nYou can find it either on your desktop in the top right corner, or by opening your computer's settings and going to \"System\"."
         }
     },
     {
-        slug: "wn_access_system",
+        slug: "incident_ao_system_mdw_wn",
         translations: {
             FR: "Copie du fichier system.mdw de \\\\inffilprdstb1\\Distrib\\Soft\\AccesOrli DLL vers C:\\rtacc2000\\Office\n\nCopie du fichier system.mdw de \\\\inffilprdstb1\\Distrib\\Soft\\AccesOrli DLL vers \\\\FRLPFH5J094\\c$\\rtacc2000\\Office",
             EN: "Copie du fichier system.mdw de \\\\inffilprdstb1\\Distrib\\Soft\\AccesOrli DLL vers C:\\rtacc2000\\Office\n\nCopie du fichier system.mdw de \\\\inffilprdstb1\\Distrib\\Soft\\AccesOrli DLL vers \\\\FRLPFH5J094\\c$\\rtacc2000\\Office"
@@ -124,70 +155,88 @@ const notes = [
         type: "wn"
     },
     {
-        slug: "reso_access_system",
+        slug: "incident_ao_system_mdw_resolution",
         translations: {
             FR: "Merci pour votre retour.\nLe fichier manquant a bien été ajouté à votre poste.\n\nIl ne vous reste plus qu'à vous rendre sur votre bureau, dans le dossier \"Applications Lacoste\" et à exécuter \"Nouvelle version Access Orli\".\nUne fois cette tâche terminée vous pouvez relancer Access Orli et tout devrait être fonctionnel.\nN'hésitez pas à revenir vers nous si ce n'est pas le cas.",
             EN: "Thank you for your feedback.\nThe missing file has been added to your computer.\n\nAll you have to do now is go to your desktop, to the \"Lacoste Applications\" folder, and run \"New Access Orli Version.\"\nOnce this task is complete, you can restart Access Orli, and everything should be working properly.\nPlease don't hesitate to get back to us if this is not the case."
         }
     },
+    // DEMANDES D'ACCES
     {
-        slug: "page_inaccessible",
+        slug: "access_access_orli_wn",
         translations: {
-            FR: "Avez-vous pu effectuer les tests de base suivants :\n- Tester en navigation privée. Si cela fonctionne, videz entièrement votre cache de navigateur.\n- Tester sur un autre navigateur.\n- Si vous avez des collègues en télétravail ont-ils également accès (via VPN) ?\n\nSi malgré tout cela le problème persiste, pourriez-vous refaire un test et nous fournir les informations suivantes :\n- Horodotage exact du test (date et heure).\n- Votre adresse IP lors du test.\n- Le lien exact auquel vous tenté d'accéder.\nEt nous confirmer que ce test est réalisé sous VPN.\n\nMerci d'avance pour votre retour.",
-            EN: ""
-        }
+            FR: "Suivi [code]<a title=\"[Access Apps] - Various software installation\" href='kb_view.do?sys_kb_id=1a25b2361b6b0e10950a11fc2d4bcb3c' >KB0011222 : [Access Apps] - Various software installation</a>[/code]",
+            EN: "Suivi [code]<a title=\"[Access Apps] - Various software installation\" href='kb_view.do?sys_kb_id=1a25b2361b6b0e10950a11fc2d4bcb3c' >KB0011222 : [Access Apps] - Various software installation</a>[/code]"
+        },
+        type: "wn"
     },
     {
-        slug: "navigation_privee",
-        translations: {
-            FR: "Pourriez-vous essayer de vous y connecter en navigation privée ?\nCliquez sur les trois points verticaux en haut à droite de votre navigateur Chrome puis \"Nouvelle fenêtre de navigation privée\".\n\nCette action a-t-elle réglé votre incident ?",
-            EN: "Could you try logging in in private browsing?\nClick on the three vertical dots at the top right of your Chrome browser then \"New Private Browsing Window\".\n\nDid this action resolve your incident ?"
-        }
-    },
-    {
-        slug: "vidage_cache",
-        translations: {
-            FR: "Si ça a fonctionné en navigation privée, ça devrait aussi fonctionner sur une fenêtre normale.\n\nPour ce faire, il faut vider intégralement le cache de votre navigateur.\n\nPour Google Chrome :\n- Cliquez sur les trois points verticaux en haut à droite.\n- Allez dans Historique (ou raccourci ctrl + H)  > Supprimer les données de navigation.\n- Cliquez sur \"Paramètres avancées\" et dans le sélecteur \"Période\" choisir \"Toutes les périodes\"\n- Cochez uniquement les 4 premières cases \"Historique de navigation\", \"Historique des téléchargements\", \"Cookies\", \"Images et fichiers en cache\"\n- Cliquez sur \"Supprimer les données\"\n- Fermez le navigateur (vérifier bien que toutes vos fenêtres sont fermées)\n- Rouvrez le navigateur et réessayez\n\nLes actions ont elles réglé votre incident ?",
-            EN: "If it worked in private browsing, it should also work in a normal window.\n\nTo do this, you must completely empty your browser cache.\n\nFor Google Chrome:\n- Click on the three vertical dots at the top right.\n- Go to History (or shortcut ctrl + H) > Delete browsing data.\n- Click on \"Advanced settings\" and in the \"Period\" selector choose \"All periods\"\n- Check only the first 4 boxes \"Browsing history\", \"Download history\", \"Cookies\", \"Cached images and files\"\n- Click on \"Delete data\"\n- Close the browser (make sure all your windows are closed)\n- Reopen the browser and try again\n\nDid the actions resolve your incident ?"
-        }
-    },
-    {
-        slug: "access_orli",
+        slug: "access_access_orli_resolution",
         translations: {
             FR: "Afin d'installer Access orli sur votre ordinateur, veuillez suivre les étapes suivantes :\n1. Ouvrir le dossier sur le bureau : \"Applications Lacoste\"\n2. Ouvrir le fichier : \"Nouvelle version access orli\"\n3. Une fenêtre s'ouvre et lance l'installation ; attendre la fin de l'installation et refermer la fenêtre\n3. Ouvrir Access Orli (une icône a été créé sur votre bureau)\n\nL'installation a-t-elle fonctionné ?",
             EN: "To install Access orli on your computer, please follow these steps:\n1. Open the folder on the desktop: \"Lacoste Applications\"\n2. Open the file: \"New version access orli\"\n3. A window opens and starts the installation; wait for the installation to complete and close the window 3. Open Access Orli (an icon has been created on your desktop) Did the installation work ?"
         }
     },
     {
-        slug: "brand_library",
+        slug: "access_adobe_requirements",
+        translations: {
+            FR: "Afin de procéder à l'attribution des accès Adobe, merci de remplir et de nous retourner le formulaire ci-joint.",
+            EN: "To proceed with the allocation of Adobe access, please complete and return the attached form to us."
+        }
+    },
+    {
+        slug: "access_adobe_wn",
+        translations: {
+            FR: "Suivi [code]<a title=\"[Adobe] - Adobe Software request management\" href='kb_view.do?sys_kb_id=1d740796c34bae10b16d1f0ed40131fd' >KB0011210 : [Adobe] - Adobe Software request management</a>[/code]\n\nFichier renommé en “LASTNAME firstname - INCxxxx.xlsx\”\n\nFichier déplacé dans \\\\usrtroyes.gdm.group.root\\groups\\Helpdesk2\\Commun\\Formulaires\\Adobe\n\nInstallation de Adobe Creative Cloud\n\nAjout groupe GROUPEAD sur AD\n\nConnexion Adobe Creative Cloud\n\nInstallation application APPLICATIONS\n\nLancement de APPLICATION OK",
+            EN: "Suivi [code]<a title=\"[Adobe] - Adobe Software request management\" href='kb_view.do?sys_kb_id=1d740796c34bae10b16d1f0ed40131fd' >KB0011210 : [Adobe] - Adobe Software request management</a>[/code]\n\nFichier renommé en “LASTNAME firstname - INCxxxx.xlsx\”\n\nFichier déplacé dans \\\\usrtroyes.gdm.group.root\\groups\\Helpdesk2\\Commun\\Formulaires\\Adobe\n\nInstallation de Adobe Creative Cloud\n\nAjout groupe GROUPEAD sur AD\n\nConnexion Adobe Creative Cloud\n\nInstallation application APPLICATIONS\n\nLancement de APPLICATION OK"
+        },
+        type: "wn"
+    },
+    {
+        slug: "access_ariba_requirements",
+        translations: {
+            FR: "Afin de procéder à l'attribution des accès Ariba, merci de remplir et de nous retourner le formulaire ci-joint.",
+            EN: "To proceed with the allocation of Ariba access, please complete and return the attached form to us."
+        }
+    },
+    {
+        slug: "access_ariba_wn",
+        translations: {
+            FR: "Suivi [code]<a title=\"[Ariba] - Overview\" href='kb_view.do?sys_kb_id=18d7accdc3d8a250b16d1f0ed4013137' >KB0022372 : [Ariba] - Overview</a>[/code]\n\nCompte Ariba de UTILISATEUR créée\n\nAjout APP_Lemon_learning_Deployment\n\nEnvoi template [RITM00XXXX] - ARIBA  Création compte / Account Creation à l'utilisateur",
+            EN: "Suivi [code]<a title=\"[Ariba] - Overview\" href='kb_view.do?sys_kb_id=18d7accdc3d8a250b16d1f0ed4013137' >KB0022372 : [Ariba] - Overview</a>[/code]\n\nCompte Ariba de UTILISATEUR créée\n\nAjout APP_Lemon_learning_Deployment\n\nEnvoi template [RITM00XXXX] - ARIBA  Création compte / Account Creation à l'utilisateur"
+        },
+        type: "wn"
+    },
+    {
+        slug: "access_brand_library_requirements",
         translations: {
             FR: "Afin de vous donner accès à Brand Library nous aurions besoin des informations suivantes :\n_ nom et prénom de l'utilisateur\n_ validation du responsable de l'utilisateur (par mail à l'adresse suivante : support@lacoste.com ou par un message directement dans ce ticket)\n_ adresse e-mail de l'utilisateur\n_ entreprise de l'utilisateur\n_ les droits requis (download/upload/admin)",
             EN: "In order to give you access to Brand Library we would need the following information:\n_ user's first and last name\n_ validation from the user's manager (by email to the following address: support@lacoste.com or by a message directly in this ticket)\n_ user's email address\n_ user's company\n_ required rights (download/upload/admin)"
         }
     },
     {
-        slug: "miro",
+        slug: "access_miro_requirements",
         translations: {
             FR: "Afin d'ajouter les utilisateurs dans l'application Miro, merci de nous fournir les informations suivantes :\n- Centre de coût\n- Validation écrite du responsable du centre de coût\n- Équipe à rejoindre au sein de l'application",
             EN: "To add users to the Miro application, please provide us with the following information:\n- Cost center\n- Written validation from the cost center manager\n- Team to join within the application"
         }
     },
     {
-        slug: "orliweb",
+        slug: "access_orliweb_requirements",
         translations: {
             FR: "Afin de procéder à la création de votre compte Orliweb, pouvez-vous nous fournir un compte de référence ?",
             EN: "In order to create your Orliweb account, can you provide us with a reference account ?"
         }
     },
     {
-        slug: "qliksense",
+        slug: "access_qliksense_requirements",
         translations: {
             FR: "Afin de vous accorder l'accès à Qliksense, pourriez-vous nous préciser les informations suivantes :\n_ stream (Sell In, Sell Out, etc…)\n_ les applications souhaités pour chaque stream\n_ les market code correspondant à la zone géographique (soit pour l'ensemble des flux, soit pour chaque application)",
             EN: "In order to grant you access to Qliksense, could you provide us with the following information:\n_ stream (Sell In, Sell Out, etc.)\n_ the desired applications for each stream\n_ the market codes corresponding to the geographical area (either for all the streams or for each application)"
         }
     },
     {
-        slug: "rosario",
+        slug: "access_rosario_requirements",
         translations: {
             FR: "Par défaut, l'application est accessible à tous les utilisateurs Lacoste. Cependant, des restrictions peuvent être appliquées sur certains menus et sous-menus.\n\nAfin de traiter efficacement votre demande, pourriez-vous nous préciser :\n- Les menus ou sous-menus auxquels vous souhaitez accéder.\n- Et, si possible, nous fournir les liens directs (URL) vers les menus concernées.",
             EN: "By default, the application is accessible to all Lacoste users. However, restrictions may apply to certain menus and submenus.\n\nIn order to efficiently process your request, could you please specify:\n- The menus or submenus you wish to access.\n- And, if possible, provide us with direct links (URLs) to the menus concerned."
