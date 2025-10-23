@@ -66,14 +66,6 @@ const notes = [
         },
         type: "esc"
     },
-    // {
-    //     slug: "escalation_to_confirm",
-    //     translations: {
-    //         fr: "D’après les informations disponibles, ce périmètre semble être géré par votre équipe.\nExemple : TICKET\n\nPourriez-vous prendre en charge ce ticket ou, le cas échéant, m’orienter vers l’équipe concernée ?",
-    //         en: "Based on the information available, this area appears to be managed by your team.\nExample: TICKET\n\nCould you take charge of this ticket or, if necessary, direct me to the appropriate team ?"
-    //     },
-    //     type: "esc"
-    // },
     {
         slug: "escalation_validation",
         translations: {
